@@ -1,0 +1,15 @@
+# Environment Pixi
+.pixi/
+
+# Hasil build
+target/
+*.mojo.🔥
+
+# Log & berkas sementara
+*.log
+*.tmp
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
