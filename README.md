@@ -193,6 +193,18 @@ baris tanpa newline di akhir serta input gaya Windows (`\r\n`).
 - Mojo 1.1 tidak menyediakan modul `random` yang stabil, jadi PRNG
   xorshift64 ditulis sendiri di `rng.mojo`.
 
+## Troubleshooting
+
+### `error: unable to locate module 'std'`
+
+Muncul kalau folder proyek dipindah/di-rename setelah `pixi install`. Environment
+di `.pixi/` menyimpan path absolut (prefix) saat dibuat, sehingga compiler tidak
+lagi menemukan `std.mojoc`. Perbaiki dengan memasang ulang environment:
+
+```bash
+pixi reinstall --offline   # atau: rm -rf .pixi && pixi install
+```
+
 ## Lisensi
 
 MIT
